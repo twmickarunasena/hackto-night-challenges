@@ -1,6 +1,9 @@
 # hackto-night-challenges
 Hakto-night hackathon challenges
 
+Wireframe Link 
+https://teamnsbm.invisionapp.com/freehand/HackToNight-wgwePXDwf?dsid_h=0d21769c51401b346e7c8beae823ce9d90df48733af52f459196934b4dc7160f&uid_h=958a2b41592ccc817b0578c7bee0d386100e9bc131bf5736c37c5a171575db40
+
 Problem Scenario 
 
  BBH Warehouse is an import and export company. They do buy and sell in their local area as well.
@@ -18,345 +21,156 @@ Use the following
 
 User Login 
 
-payload 
+payload
 
- { 
-
- 
-	
-
-"username": self.username, 
-
- 
-	
-
- 
-	
-
- "email": self.email, 
-	
-
- "password": self.password 
-
- 
-	
-
- 
-	
-
-        } 
-
- 
-
-Endpoint 
-
-api/register 
-
-response schema 
-
+```json
 { 
-	
+	"username": self.username, 
+	"email": self.email, 
+	"password": self.password 
+} 
+```
+ 
 
+Endpoint  api/register 
+
+```json
+response schema 
+{ 
     "$schema": "http://json-schema.org/draft-04/schema#", 
-	
-
     "type": "object", 
-	
-
     "properties": { 
-	
-
         "email": { 
-	
-
             "type": "string" 
-	
-
         }, 
 	
-
-        "role": { 
-	
-
+        "role": {
             "type": "string" 
-	
-
         }, 
 	
-
         "user_id": { 
-	
-
             "type": "integer" 
-	
-
         }, 
 	
-
         "username": { 
-	
-
             "type": "string" 
-	
-
         } 
-	
 
     }, 
 	
 
     "required": [ 
-	
-
-        "email", 
-	
-
+        "email",
         "role", 
-	
-
         "user_id", 
-	
-
         "username" 
-	
-
     ] 
-	
-
 } 
+```
 
 Check login 
 
  
-
+```json
 { 
-	
-
         "email": self.email, 
-	
-
         "password": self.password 
-	
-
     } 
-
+```
  
-
-Endpoint 
-
+Endpoint  
 api/login 
-
- 
 
 Schema 
 
-{ 
-	
-
+```json
+{ 	
   "$schema": "http://json-schema.org/draft-04/schema#", 
-	
-
   "type": "array", 
-	
-
-  "items": [ 
-	
-
-    { 
-	
-
+  "items": [ 	
+    { 	
       "type": "object", 
-	
-
-      "properties": { 
-	
-
-        "feedback_id": { 
-	
-
-          "type": "integer" 
-	
-
+      "properties": { 	
+        "feedback_id": { 	
+          "type": "integer" 	
         }, 
 	
-
-        "feedback": { 
-	
-
-          "type": "string" 
-	
-
+        "feedback": { 	
+          "type": "string" 	
         }, 
 	
-
-        "user": { 
-	
-
-          "type": "integer" 
-	
-
-        } 
-	
-
+        "user": { 	
+          "type": "integer" 	
+        } 	
       }, 
 	
-
-      "required": [ 
-	
-
+      "required": [ 	
         "feedback_id", 
-	
-
-        "feedback", 
-	
-
-        "user" 
-	
-
+        "feedback",
+        "user" 	
       ] 
-	
-
-    } 
-	
-
+    } 	
   ] 
-	
-
 } 
-	
-
- 
 	
 
 create_feedback_list = { 
-	
-
-  "$schema": "http://json-schema.org/draft-04/schema#", 
-	
-
+  "$schema": "http://json-schema.org/draft-04/schema#", 	
   "type": "object", 
-	
-
   "properties": { 
-	
-
-    "feedback": { 
-	
-
+  "feedback": { 
       "type": "string" 
-	
-
     }, 
 	
-
-    "feedback_id": { 
-	
-
+    "feedback_id": { 	
       "type": "integer" 
-	
-
     }, 
-	
 
-    "user": { 
-	
-
-      "type": "integer" 
-	
-
-    } 
-	
-
+    "user": { 	
+      "type": "integer" 	
+    } 	
   }, 
 	
 
   "required": [ 
-	
-
-    "feedback", 
-	
-
-    "feedback_id", 
-	
-
-    "user" 
-	
-
-  ] 
-	
-
+    "feedback", 	
+    "feedback_id", 	
+    "user" 	
+  ] 	
 } 
 	
 
- 
-	
-
- 
-	
-
-login_response_schema = { 
-	
-
-  "$schema": "http://json-schema.org/draft-04/schema#", 
-	
-
+login_response_schema = { 	
+  "$schema": "http://json-schema.org/draft-04/schema#", 	
   "type": "object", 
-	
 
   "properties": { 
-	
-
     "auth_token": { 
-	
-
       "type": "string" 	
-
     } 
-	
-
   }, 
 	
-
   "required": [ 
-
     "auth_token" 
-
  } 
-
+```
  
 
 Feedback 
 
-{ 
-	
-
-  "$schema": "http://json-schema.org/draft-04/schema#", 
-	
-
-  "type": "array", 
-	
-
-  "items": [ 
-	
-
-    { 
-	
-
-      "type": "object", 
-	
-      "properties": { 
-	
-
-        "feedback_id": { 
-	
+```json
+{ 	
+  "$schema": "http://json-schema.org/draft-04/schema#", 	
+  "type": "array", 	
+  "items": [ 	
+    { 	
+      "type": "object", 	
+      "properties": { 	
+        "feedback_id": { 	
           "type": "integer" 
-
         }, 
 	
-
-        "feedback": { 
-	
-
+        "feedback": { 	
           "type": "string" 1
         }, 
 	
@@ -375,7 +189,6 @@ Feedback
 	
   ] 
 } 
-	
 
 create_feedback_list = { 
 	
@@ -383,28 +196,22 @@ create_feedback_list = {
   "type": "object", 
   "properties": { 
     "feedback": { 
-	
-
       "type": "string" 
     }, 
 	
-
     "feedback_id": { 
       "type": "integer" 
-
-    }, 
-	
+    },
+    
     "user": { 
       "type": "integer" 
-    } 
-	
+    } 	
   }, 
 	
   "required": [ 
     "feedback", 
     "feedback_id", 
-    "user" 
-	
-  ] 
-	
+    "user" 	
+  ] 	
 } 
+```
